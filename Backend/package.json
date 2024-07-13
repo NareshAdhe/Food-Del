@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
-    "server":"npx nodemon server.js"
+    "server": "npx nodemon server.js"
   },
   "author": "Naresh Adhe",
   "license": "ISC",
