@@ -1,18 +1,6 @@
 import React, { useEffect } from 'react'
 import './Header.css'
-import gsap from 'gsap'
 const Header = () => {
-
-    useEffect(() => {
-        let tl = gsap.timeline();
-        tl.from(".header-contents h2,.header-contents p,.header-contents button",{
-            x: -100,
-            opacity:0,
-            delay:2,
-            duration:0.3,
-            stagger:.2
-        });
-    },[])
 
     return (
         <div className="header">
