@@ -9,34 +9,6 @@ import { toast } from 'react-toastify';
 const Navbar = ({ setShowLogin}) => {
 
   const buttonRef = useRef(null);
-
-  useEffect(() => {
-    let tl = gsap.timeline();
-    tl.from(".logo", {
-      y: -30,
-      duration: 0.2,
-      delay:0.5,
-      opacity:0
-    });
-    tl.from(".navbar-menu a,.navbar-menu Link",{
-      y: -30,
-      duration: 0.2,
-      opacity:0,
-      stagger:0.1
-    });
-    tl.from(".navbar-right img,.navbar-search-icon img",{
-      y: -30,
-      duration: 0.2,
-      opacity:0,
-      stagger:0.1
-    });
-    tl.from(buttonRef.current,{
-      y: -30,
-      duration: 0.2,
-      opacity:0,
-    });
-  },[]);
-
   const { token, setToken } = useContext(StoreContext);
   const [menu, setMenu] = useState("Home");
   const { getTotalCartAmount } = useContext(StoreContext);

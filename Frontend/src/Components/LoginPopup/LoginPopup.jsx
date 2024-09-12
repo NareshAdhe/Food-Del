@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './LoginPopup.css'
 import { assets } from '../../assets/assets';
 import { StoreContext } from '../../Context/StoreContext';
@@ -6,7 +6,7 @@ import axios from 'axios'
 import { toast} from 'react-toastify';
 const LoginPopup = ({setShowLogin}) => {
     const [currentState,setCurrentState] = useState("Sign Up");
-    const {token,setToken,url} = useContext(StoreContext);
+    const {setToken,url} = useContext(StoreContext);
     const [data,setData] = useState({
         name:"",
         email:"",
@@ -39,10 +39,6 @@ const LoginPopup = ({setShowLogin}) => {
             toast.error(response.data.message);
         }
     }
-
-    useEffect(() => {
-        console.log(data);
-    },[data])
 
   return (
     <div className='login-popup' onSubmit={onLogin}>

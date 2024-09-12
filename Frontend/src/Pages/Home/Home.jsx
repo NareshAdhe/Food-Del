@@ -4,7 +4,6 @@ import Header from '../../Components/Header/Header'
 import ExploreMenu from '../../Components/ExploreMenu/ExploreMenu'
 import FoodDisplay from '../../Components/FoodDisplay/FoodDisplay'
 import AppDownload from '../../Components/AppDownload/AppDownload'
-import gsap from 'gsap'
 const Home = () => {
   const [category,setCategory] = useState("All");
 

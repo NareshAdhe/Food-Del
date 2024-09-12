@@ -11,7 +11,7 @@ const FoodItem = ({id,name,price,description,image}) => {
     <div className='food-item'>
         <div className="food-item-image-container">
             <img src={url+"/images/"+image} alt="" className="food-item-image" />
-            {!cartItems[id]||!token
+            {!cartItems[id] || !token
             ? <img className='add' onClick={() => {token?addToCart(id):toast.error("Please Login First")}} src={assets.add_icon_white} alt='' />
             :<div className="food-item-counter">
                 <img onClick={() => removeFromCart(id)} src={assets.remove_icon_red} alt="" />
