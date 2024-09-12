@@ -7,7 +7,6 @@ import Footer from "./Components/Footer/Footer";
 import { useEffect, useState } from "react";
 import LoginPopup from "./Components/LoginPopup/LoginPopup";
 import Verify from "./Pages/Verify/Verify";
-import gsap from "gsap";
 import MyOrders from "./Pages/MyOrders/MyOrders";
 
 function App() {
