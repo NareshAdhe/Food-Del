@@ -11,8 +11,17 @@ const StoreContextProvider = (props) => {
     const [food_list, setFoodList] = useState([]);
 
     const loadCartData = async (token) => {
-        const response = await axios.post(url + "/api/cart/get", {}, { headers: { token } });
-        setCartItems(response.data.cartData);
+        try {
+            const response = await axios.post(url + "/api/cart/get", {}, { headers: { token } });
+            if (response.data.success) {
+                setCartItems(response.data.cartData);
+            }
+            else {
+                console.log(response.data.message);
+            }
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     useEffect(() => {
