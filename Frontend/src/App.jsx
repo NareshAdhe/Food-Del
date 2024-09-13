@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import LoginPopup from "./Components/LoginPopup/LoginPopup";
 import Verify from "./Pages/Verify/Verify";
 import MyOrders from "./Pages/MyOrders/MyOrders";
+import AppDownload from "./Components/AppDownload/AppDownload";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/myorders" element={<MyOrders />} />
         </Routes>
       </div>
+      <AppDownload />
       <Footer />
     </>
   )

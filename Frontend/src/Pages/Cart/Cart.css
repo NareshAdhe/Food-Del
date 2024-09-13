@@ -1,5 +1,5 @@
 .cart{
-    margin-top: 100px;
+    margin:100px 0px 300px 100px;
 }
 
 .cart-items-title{
@@ -31,7 +31,7 @@
 }
 
 .cart-bottom{
-    margin-top: 80px;
+    margin-top: 100px;
     display: flex;
     justify-content: space-between;
     gap: max(12vw,20px);
