@@ -14,15 +14,9 @@ const StoreContextProvider = (props) => {
         const response = await axios.post(url+"/api/cart/get",{},{headers:{token}});
         setCartItems(response.data.cartData);
     }
-    
-    const fetchFoodList = async () => {
-        const response = await axios.get(url+"/api/food/list");
-        setFoodList(response.data.data);
-    }
 
     useEffect(() => {
         async function loadData() {
-            await fetchFoodList();
             if(localStorage.getItem("token")){
                 setToken(localStorage.getItem("token"));
                 await loadCartData(localStorage.getItem("token"));
@@ -72,7 +66,8 @@ const StoreContextProvider = (props) => {
         getTotalCartAmount,
         token,
         setToken,
-        url
+        url,
+        setFoodList
     }
     return (
         <StoreContext.Provider value={contextValue} >
