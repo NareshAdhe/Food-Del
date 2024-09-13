@@ -17,7 +17,6 @@ const MyOrders = () => {
     if (response.data.success) {
       setLoading(false);
       setData(response.data.data);
-      console.log(response.data.data);
     }
     else {
       toast.error(response.data.message);

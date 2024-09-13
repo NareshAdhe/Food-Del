@@ -6,22 +6,22 @@ import { ShimmerThumbnail } from "react-shimmer-effects";
 import axios from 'axios';
 
 const FoodDisplay = ({ category }) => {
-    const { food_list,setFoodList,url } = useContext(StoreContext);
+    const { food_list, setFoodList, url } = useContext(StoreContext);
     const [loading, setLoading] = useState(true);
     const fetchFoodList = async () => {
-        const response = await axios.get(url+"/api/food/list");
+        const response = await axios.get(url + "/api/food/list");
         setLoading(false);
         setFoodList(response.data.data);
     }
     useEffect(() => {
         fetchFoodList();
-    },[]);
+    }, []);
     return (
         <div className='food-display' id='food-display'>
             <h2>Top dishes near you</h2>
             <div className="food-display-list">
-                {loading ? Array.from({ length: 32 }).map((ele,ind) => (
-                    <ShimmerThumbnail key={ind}/>
+                {loading ? Array.from({ length: 16 }).map((ele, ind) => (
+                    <ShimmerThumbnail key={ind} height={200} />
                 )) :
                     food_list.map((item, index) => {
                         if (category === "All" || category === item.category) {
