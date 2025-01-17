@@ -3,7 +3,7 @@ import orderModel from "../models/orderModel.js";
 import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const frontend_url = "https://food-del-frontend-fx0q.onrender.com";
+const frontend_url = process.env.FRONTEND_URI;
 
 // placing user order on frontend
 const placeOrder = async (req, res) => {
