@@ -50,7 +50,9 @@ const PlaceOrder = () => {
       window.location.replace(session_url);
     }
     else {
-      alert(response.data.message);
+      const session_url = response.data.session_url;
+      window.location.replace(session_url);
+      toast(response.data.message);
     }
   }
 
